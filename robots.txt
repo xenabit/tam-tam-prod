@@ -1,0 +1,4 @@
+создать
+User-agent: *
+Allow: /
+Sitemap: https://iching.laba-laba.ru/sitemap.xml
