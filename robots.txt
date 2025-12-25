@@ -1,4 +1,4 @@
 создать
 User-agent: *
 Allow: /
-Sitemap: https://iching.laba-laba.ru/sitemap.xml
+Sitemap: https://xenabit.github.io/tam-tam-prod/sitemap.xml
