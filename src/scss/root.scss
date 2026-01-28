@@ -1,0 +1,32 @@
+:root {
+  /* Colors */
+  --0: #849adc;
+  --1: #b7c6f4;
+  --3: #2ea56c;
+  --4: #39c883;
+  --5: #80dcb0;
+  --6: #2ea56c;
+  --7: #ffd26e;
+  --9: #c41650;
+  --10: #ea437b;
+  --11: #f49cba;
+  --13: #5b71c1;
+  --12: #4c4c4c;
+  --light: rgba(255, 255, 255, 0.78);
+  --white: #fdfdfd;
+
+  /* Fonts */
+  --font-prime: 'Baloo Cyrillic';
+  --font-sec: 'Ubuntu', sans-serif;
+
+  /* Font weights */
+  --fw-light: 300;
+  --fw-regular: 400;
+  --fw-medium: 500;
+  --fw-semibold: 500;
+  --fw-bold: 700;
+  --fw-extra-bold: 800;
+
+  --safe-area-top: env(safe-area-inset-top, constant(safe-area-inset-top, 20px));
+  --safe-area-bottom: env(safe-area-inset-bottom, constant(safe-area-inset-bottom, 20px));
+}

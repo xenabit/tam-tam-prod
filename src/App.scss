@@ -1,0 +1,127 @@
+@use './scss/fonts';
+@use './scss/reset';
+@use './scss/root';
+
+html {
+  $s: &;
+  height: 100%;
+  font-family: var(--font-prime);
+  background-color: #fdfdfd !important;
+  color-scheme: light dark;
+  scrollbar-color: rgba(0, 0, 0, 0.5) rgba(0, 0, 0, 0.1);
+  padding: 0;
+  margin: 0;
+  /* Убирает подсветку при таче */
+  -webkit-tap-highlight-color: transparent;
+  /* Firefox Уменьшение толщины полосы прокрутки */
+  scrollbar-width: thin;
+  /* Safari - предотвращает изменение высоты при скрытии адресной строки*/
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  font-family: var(--font-prime);
+  background-color: #fdfdfd !important;
+  min-height: 100vh;
+  height: 100dvh;
+  min-height: -webkit-fill-available;
+  color: var(--aspen);
+  -webkit-backdrop-filter: none !important;
+  backdrop-filter: none !important;
+  overflow-x: hidden;
+  width: 100%;
+  max-width: 100vw;
+  margin: 0;
+  padding-bottom: var(--safe-area-bottom);
+  position: relative;
+  // Критически важно для iOS
+  -webkit-overflow-scrolling: touch;
+
+  // Исправление для safe area на iOS
+  padding-top: var(--safe-area-top);
+  padding-right: var(--safe-area-right);
+  padding-bottom: var(--safe-area-bottom);
+  padding-left: var(--safe-area-left);
+
+  // Гарантируем белый фон под скроллом
+  &::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: #fdfdfd !important;
+    z-index: -1;
+    pointer-events: none;
+  }
+}
+
+// Для overscroll области (iOS-specific)
+@supports (-webkit-overflow-scrolling: touch) {
+  html,
+  body {
+    background-color: var(--white); // Покрывает bounce area
+  }
+}
+
+@media (display-mode: browser) {
+  // Для Safari на iOS 15+
+  @supports (-webkit-touch-callout: none) and (not (display-mode: standalone)) {
+    body {
+      // Дополнительные гарантии для панели навигации
+      background-color: var(--white) !important;
+      background-image: linear-gradient(to bottom, var(--white) 0%, var(--white) env(safe-area-inset-top), transparent env(safe-area-inset-top));
+    }
+
+    // Убедитесь, что Header тоже учитывает safe area
+    header,
+    .header {
+      padding-top: max(env(safe-area-inset-top), 20px);
+      background-color: var(--white);
+    }
+  }
+}
+
+main {
+  min-height: 100%;
+}
+
+section {
+  display: block;
+  overflow: hidden;
+}
+
+.scroll-container {
+  height: 100vh;
+  overflow-y: hidden;
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+  -webkit-overflow-scrolling: touch;
+  overscroll-behavior: contain;
+  touch-action: pan-y;
+
+  /* Скрытие скроллбара */
+  scrollbar-width: none; /* Для Firefox */
+  -ms-overflow-style: none; /* Для Internet Explorer и Edge */
+
+  &::-webkit-scrollbar {
+    display: none; /* Для Chrome, Safari, и других WebKit-браузеров */
+  }
+}
+
+/* Уменьшение толщины полосы прокрутки для WebKit-браузеров (Chrome, Safari) */
+::-webkit-scrollbar {
+  width: 8px; /* Толщина вертикальной полосы прокрутки */
+  height: 8px; /* Толщина горизонтальной полосы прокрутки */
+}
+
+/* Стилизация ползунка */
+::-webkit-scrollbar-thumb {
+  border-radius: 4px;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+/* Стилизация фона полосы прокрутки */
+::-webkit-scrollbar-track {
+  background-color: rgba(0, 0, 0, 0.1);
+}

@@ -1,0 +1,35 @@
+@font-face {
+  font-style: normal;
+  font-weight: 400;
+  font-family: 'Baloo Cyrillic';
+  font-display: swap;
+  src:
+    url('./assets/fonts/baloo/baloo_cyrillic.woff2') format('woff2'),
+    url('./assets/fonts/baloo/baloo_cyrillic.woff') format('woff'),
+    url('./assets/fonts/baloo/baloo_cyrillic.ttf') format('truetype'),
+    url('./assets/fonts/baloo/baloo_cyrillic.svg#baloo_cyrillic') format('svg');
+}
+
+@font-face {
+  font-style: normal;
+  font-weight: 400;
+  font-family: 'Ubuntu';
+  font-display: swap;
+  src:
+    url('./assets/fonts/ubuntu/ubuntu-regular.woff2') format('woff2'),
+    url('./assets/fonts/ubuntu/ubuntu-regular.woff') format('woff'),
+    url('./assets/fonts/ubuntu/ubuntu-regular.ttf') format('truetype'),
+    url('./assets/fonts/ubuntu/ubuntu-regular.svg#baloo_cyrillic') format('svg');
+}
+
+@font-face {
+  font-style: normal;
+  font-weight: 300;
+  font-family: 'Ubuntu';
+  font-display: swap;
+  src:
+    url('./assets/fonts/ubuntu/ubuntu-light.woff2') format('woff2'),
+    url('./assets/fonts/ubuntu/ubuntu-light.woff') format('woff'),
+    url('./assets/fonts/ubuntu/ubuntu-light.ttf') format('truetype'),
+    url('./assets/fonts/ubuntu/ubuntu-light.svg#baloo_cyrillic') format('svg');
+}

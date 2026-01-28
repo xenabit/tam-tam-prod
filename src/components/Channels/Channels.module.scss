@@ -1,0 +1,290 @@
+.Channels {
+  $s: &;
+  overflow: hidden;
+  height: 100vh;
+  position: relative;
+  @include headerPadding;
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+  }
+
+  &__box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding-bottom: 7vh;
+  }
+
+  &__text {
+    width: 78vw;
+    height: auto;
+    margin-top: 0;
+    margin-bottom: 7vh;
+    margin-left: auto;
+    margin-right: auto;
+    transform-origin: center;
+    transform: none;
+
+    img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+  }
+
+  &__animal {
+    position: relative;
+    margin-top: -3%;
+    width: 74vw;
+    height: 74vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__circle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    z-index: 5;
+    width: 100%;
+    height: 100%;
+    border-radius: 100%;
+    background: linear-gradient(180deg, #ffbe2d 0%, #ffbe2d 34.68%, #e1851b 115.59%);
+    transform: scale(0);
+    overflow: hidden;
+  }
+
+  &__picture {
+    width: 60vw;
+    position: relative;
+    margin-top: -13%;
+    transform: scale(0);
+    z-index: 5;
+
+    div {
+      position: absolute;
+      z-index: 10;
+      width: 115%;
+      aspect-ratio: 258 / 50;
+      content: '';
+      bottom: 2%;
+      left: 50%;
+      transform: translateX(-50%);
+      background: linear-gradient(0deg, rgba(90, 51, 14, 0.9) 0%, #de9713 36.5%);
+      filter: blur(7px);
+      border-radius: 50%;
+    }
+
+    img {
+      position: relative;
+      z-index: 15;
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+  }
+
+  &__logos {
+    z-index: 15;
+  }
+
+  &__logo {
+    --size: 19vw;
+    width: var(--size);
+    height: var(--size);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    z-index: 20;
+    scale: 0;
+    opacity: 0;
+    transform-origin: center center;
+
+    a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 100%;
+      box-shadow: 3.69px 7.38px 14.77px 0px #405293cc;
+      width: 100%;
+      height: 100%;
+
+      &:not([href]) {
+        background-color: #a4a9bc;
+      }
+    }
+
+    img {
+      display: block;
+      width: 9.8vw;
+      height: 9.8vw;
+    }
+
+    &_rutube,
+    &_like,
+    &_ok {
+      a {
+        background-color: var(--10);
+      }
+    }
+
+    &_rutube {
+      left: -15%;
+      top: 27%;
+    }
+
+    &_like {
+      right: -15%;
+      top: 27%;
+    }
+
+    &_ok {
+      bottom: -13%;
+      left: calc(50% - (var(--size) / 2));
+    }
+
+    &_tg {
+      left: -3%;
+      bottom: 6%;
+
+      a {
+        background-color: var(--4);
+      }
+    }
+
+    &_vk {
+      right: -3%;
+      bottom: 6%;
+
+      a {
+        background-color: var(--0);
+      }
+    }
+  }
+
+  @media all and (min-width: $bp4) {
+    &__container {
+      position: relative;
+    }
+
+    &__box {
+      padding-bottom: 0;
+    }
+
+    &__picture {
+      width: 36vw;
+      position: relative;
+      margin-top: -13%;
+    }
+
+    &__animal {
+      width: 45.5vw;
+      height: 45.5vw;
+    }
+
+    &__text {
+      position: absolute;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      inset: 0;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      margin-top: 3vh;
+      margin-bottom: 0;
+      width: 81vw;
+      height: auto;
+    }
+
+    &__logo {
+      --size: 10vw;
+
+      a {
+        transition: 0.3s;
+
+        &[href]:hover {
+          transform: scale(1.12);
+        }
+      }
+
+      img {
+        width: 5vw;
+        height: 5vw;
+      }
+
+      &_rutube {
+        left: -15%;
+        top: 27%;
+      }
+
+      &_like {
+        right: -15%;
+        top: 27%;
+      }
+
+      &_vk {
+        right: -3%;
+        bottom: 6%;
+      }
+
+      &_tg {
+        left: -3%;
+        bottom: 6%;
+      }
+
+      &_ok {
+        bottom: -13%;
+        left: calc(50% - (var(--size) / 2));
+      }
+    }
+  }
+
+  @media all and (min-width: $bp3) {
+    padding-top: 0;
+
+    &__picture {
+      div {
+        filter: blur(1.25vw);
+      }
+    }
+
+    &__logo {
+      &_rutube {
+        left: -11%;
+        top: 32%;
+      }
+
+      &_like {
+        right: -12%;
+        top: 32%;
+      }
+
+      &_ok {
+        bottom: -11%;
+      }
+
+      &_tg {
+        left: -1%;
+        bottom: 11%;
+      }
+
+      &_vk {
+        right: -1%;
+        bottom: 11%;
+      }
+    }
+  }
+}

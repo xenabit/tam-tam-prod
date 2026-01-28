@@ -1,0 +1,238 @@
+.Carousel {
+  $s: &;
+  overflow: hidden;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+
+  &__background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #39c883;
+    will-change: background-color;
+
+    --bg-progress: 100%;
+    --bg-color-current: #39c883;
+    --bg-color-next: #ea437b;
+  }
+
+  &__container {
+    width: 100%;
+    height: 100%;
+  }
+
+  &__intro {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+  }
+
+  &__text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform-origin: center;
+    transform: translate(-50%, -50%);
+    width: 90vw;
+    z-index: 10;
+    transform-origin: center center;
+    will-change: transform;
+    color: var(--white);
+
+    img {
+      width: 100%;
+      display: block;
+      height: auto;
+    }
+  }
+
+  &__element {
+    position: absolute;
+
+    img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+
+    &_1 {
+      top: 7%;
+      left: -41%;
+      width: 123vw;
+      transform: translate(-90%, -90%) rotate(12deg);
+    }
+
+    &_2 {
+      top: 58%;
+      left: 23%;
+      width: 127vw;
+      transform: translate(90%, 90%) rotate(1deg);
+    }
+  }
+
+  &__carousel {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__character {
+    transform: scale(0);
+  }
+
+  &__picture {
+    width: rem(340);
+    margin-bottom: 15vh;
+    position: relative;
+    opacity: 1; // Начальная прозрачность
+    transform: scale(1); // Начальный scale
+
+    img {
+      display: block;
+      width: 100%;
+      height: auto;
+      position: relative;
+      z-index: 10;
+    }
+
+    &::before {
+      position: absolute;
+      z-index: 10;
+      width: 115%;
+      aspect-ratio: 258 / 50;
+      content: '';
+      bottom: 3%;
+      left: 50%;
+      transform: translateX(-50%);
+      background: linear-gradient(0deg, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0.1) 36.5%);
+      filter: blur(25px);
+      border-radius: 100%;
+    }
+  }
+
+  &__items {
+    opacity: 0;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, 5%);
+    z-index: 20;
+  }
+
+  &__item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-self: flex-start;
+    position: absolute;
+    padding: 0 5px;
+    will-change: transform;
+    backface-visibility: hidden;
+    transform-style: preserve-3d;
+    top: 50%;
+    left: 50%;
+
+    // &_1 {
+    //   background-color: red;
+    // }
+    // &_2 {
+    //   background-color: pink;
+    // }
+    // &_3 {
+    //   background-color: green;
+    // }
+    // &_4 {
+    //   background-color: blue;
+    // }
+    // &_5 {
+    //   background-color: yellow;
+    // }
+    // &_6 {
+    //   background-color: black;
+    // }
+    // &_7 {
+    //   background-color: white;
+    // }
+  }
+
+  &__title {
+    font-size: 25px;
+    line-height: 1;
+    text-shadow: 0px 6.1px 20.9px rgba(0, 0, 0, 0.4);
+    will-change: font-size, margin-top, font-weight;
+    margin-top: 0.5rem;
+    color: var(--white);
+  }
+
+  &__icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    background-color: #82caa7;
+    border-width: 6px;
+    border-style: solid;
+    border-color: #ffffffa3;
+    border-radius: 31px / 32px;
+    aspect-ratio: 1 / 1;
+    will-change: background-color, border-color;
+
+    img {
+      display: block;
+      width: 100%;
+      height: auto;
+      will-change: transform, scale;
+    }
+  }
+
+  @media all and (min-width: $bp4) {
+    &__text {
+      width: 68vw;
+    }
+
+    &__title {
+      font-size: 2vw;
+      transform: translateY(50%);
+    }
+    &__element {
+      &_1 {
+        top: -15%;
+        left: -24%;
+        width: 56vw;
+      }
+
+      &_2 {
+        top: 23%;
+        left: 68%;
+        width: 58vw;
+      }
+    }
+
+    &__items {
+      transform: translateX(-50%);
+    }
+
+    &__item {
+      padding: 0 1vw;
+    }
+
+    &__picture {
+      width: 30vw;
+      margin-bottom: 7.7vh;
+    }
+    &__icon {
+      border-width: 0.625vw;
+      border-radius: 2.5vw / 2.62vw;
+    }
+  }
+}
