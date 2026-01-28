@@ -1,8 +1,0 @@
-@font-face {
-  font-family: 'Baloo Cyrillic';
-  src:
-    url('../fonts/baloo_cyrillic.woff2') format('woff2'),
-    /* Super Modern Browsers */ url('../fonts/baloo_cyrillic.woff') format('woff'),
-    /* Firefox >= 3.6, any other modern browser */ url('../fonts/baloo_cyrillic.ttf') format('truetype'),
-    /* Safari, Android, iOS */ url('../fonts/baloo_cyrillic.svg#baloo_cyrillic') format('svg'); /* Chrome < 4, Legacy iOS */
-}
