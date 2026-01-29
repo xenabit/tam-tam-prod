@@ -1,0 +1,1 @@
+import{j as e}from"./vendor-Czmxryr-.js";const s="_Loader_jlp1c_2",o="_Loader__spinner_jlp1c_15",r={Loader:s,Loader__spinner:o};function a(){return e.jsx("section",{className:r.Loader,children:e.jsx("div",{className:r.Loader__spinner})})}export{a as L};
